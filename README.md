@@ -21,6 +21,7 @@ jobs:
     - name: ENV_VAR
       value: ENV_VALUE
     command: ["<command>"]
+    suspend: true|false|omit
     args:
     - "<arg_1>"
     - "<arg_2>"

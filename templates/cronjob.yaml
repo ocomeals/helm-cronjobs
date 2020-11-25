@@ -42,6 +42,9 @@ spec:
             {{- if $job.command }}
             command: {{ $job.command }}
             {{- end }}
+            {{- if $job.suspend }}
+            command: {{ $job.suspend }}
+            {{- end }}
             {{- with $job.args }}
             args:
 {{ toYaml . | indent 12 }}
