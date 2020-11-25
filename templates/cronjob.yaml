@@ -43,7 +43,7 @@ spec:
             command: {{ $job.command }}
             {{- end }}
             {{- if $job.suspend }}
-            command: {{ $job.suspend }}
+            suspend: {{ $job.suspend }}
             {{- end }}
             {{- with $job.args }}
             args:
