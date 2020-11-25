@@ -42,9 +42,6 @@ spec:
             {{- if $job.command }}
             command: {{ $job.command }}
             {{- end }}
-            {{- if $job.suspend }}
-            suspend: {{ $job.suspend }}
-            {{- end }}
             {{- with $job.args }}
             args:
 {{ toYaml . | indent 12 }}
@@ -75,5 +72,8 @@ spec:
 {{ toYaml . | indent 12 }}
           {{- end }}
   schedule: {{ $job.schedule | quote }}
+  {{- if $job.suspend }}
+  suspend: {{ $job.suspend }}
+  {{- end }}
   successfulJobsHistoryLimit: {{ $job.successfulJobsHistoryLimit }}
 {{- end }}
